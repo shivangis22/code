@@ -61,23 +61,23 @@ function Adminform() {
   return(
     <div className="wrapper">
       <h1>Input Project Data</h1>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} >
         <fieldset>
           <label>
             <p>Project Name</p>
-            <input name="name" />
+            <input name="name" required/>
           </label>
         </fieldset>
         <fieldset>
           <label>
             <p>Project Leader</p>
-            <input name="leader" />
+            <input name="leader" required/>
           </label>
         </fieldset>
         <fieldset>
           <label>
             <p>Project description</p>
-            <input name="description" />
+            <input name="description" required />
           </label>
         </fieldset>
         <fieldset>
@@ -90,6 +90,7 @@ function Adminform() {
                     onChange={handleFileInputChange}
                     value={fileInputState}
                     className="form-input"
+                    required
                 />
             <input
                     id="fileInput"
@@ -98,6 +99,7 @@ function Adminform() {
                     onChange={handleFileInputChange}
                     value={fileInputState}
                     className="form-input"
+                    required
                 />
                 <input
                     id="fileInput"
@@ -106,6 +108,7 @@ function Adminform() {
                     onChange={handleFileInputChange}
                     value={fileInputState}
                     className="form-input"
+                    required
                 />
                 <input
                     id="fileInput"
@@ -114,6 +117,7 @@ function Adminform() {
                     onChange={handleFileInputChange}
                     value={fileInputState}
                     className="form-input"
+                    required
                 />
                 {previewSource && (
                 <img
@@ -127,25 +131,25 @@ function Adminform() {
         <fieldset>
           <label>
             <p>Github Link</p>
-            <input name="github" />
+            <input name="github" required />
           </label>
         </fieldset>
         <fieldset>
           <label>
             <p>Demo Link</p>
-            <input name="demolink" />
+            <input name="demolink" required/>
           </label>
         </fieldset>
         <fieldset>
           <label>
             <p>Documentation</p>
-            <input name="documentation" />
+            <input name="documentation" required />
           </label>
         </fieldset>
         <fieldset>
           <label>
             <p>Tech Stack</p>
-            <input name="tech" />
+            <input name="tech" required/>
           </label>
         </fieldset>
         <button type="submit">Submit</button>
