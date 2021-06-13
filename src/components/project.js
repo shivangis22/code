@@ -7,7 +7,7 @@ import pic4 from '../assets/44.png'
 import '../styles/project.css'
 
 export const Project = (props) => {
-    
+    console.log(props.data.tech_stack)
     const [lotus, setlotus] = useState('block');
     const [boat, setboat] = useState('none');
     const [leaves, setleaves] = useState('none');
@@ -99,10 +99,16 @@ export const Project = (props) => {
                             <p className="card-text">{props.data.description}
                         </p>
                         <div className="tab_h">
-                <span className="round-tab_h">Designing</span>
+                        {   
+                            props.data.tags && props.data.tags.map((tag)=>(
+                            <span className="round-tab_h">{tag}</span>
+                            ))
+
+                        }
+                {/* <span className="round-tab_h">Designing</span>
                 <span className="round-tab_h">Web development</span>
                 <span className="round-tab_h">Coding</span> 
-                <span className="round-tab_h">React</span> 
+                <span className="round-tab_h">React</span>  */}
                         </div>
                             <div className="btn-group m-1">
                                 <a href={props.data.github} target="_blank" ><button type="button" className="btn ">Github</button></a>

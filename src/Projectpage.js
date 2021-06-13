@@ -1,13 +1,26 @@
+import { useState, useEffect } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import {Project} from "./components/project";
 import Header from "./components/header";
-import Filter from "./components/filter";
+import {GetProjects} from "./utils/Projects"
+// import Filter from "./components/filter";
 
 import Data from "./data";
 
 function Projectpage() {
-  console.log(Data[0]);
+
+  const [projects, setProjects] = useState([{}])
+  useEffect(()=>{
+    const fetchData = async()=> {
+      let result = await GetProjects()
+      console.log(result)
+      setProjects(result)
+    }
+    fetchData()
+  },[])
+  console.log(Data[0])
+
 
   return (
     <>
@@ -16,9 +29,9 @@ function Projectpage() {
      {/* <Filter/> */}
     </div>
    {
-    Data.map((dt)=>{
+    projects.map((dt)=>{
       return(
-        <Project data={dt}/>
+        <Project data={dt} key={dt.key}/>
       )
     })
 
